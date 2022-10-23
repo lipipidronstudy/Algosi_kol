@@ -60,7 +60,10 @@ struct myList {
             cout << "List is Empty";
             return;
         }
+<<<<<<< HEAD
         head = head -> next;
+=======
+>>>>>>> 3fb7053e0238639c7973c07ac37a4116bc1082fd
         delete(tmp);
 
     }
@@ -71,8 +74,11 @@ struct myList {
             cout << "List is Empty";
             return;
         }
+<<<<<<< HEAD
 
         tail = tail -> prev;
+=======
+>>>>>>> 3fb7053e0238639c7973c07ac37a4116bc1082fd
         delete(tmp);
     }
 
