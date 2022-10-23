@@ -56,11 +56,11 @@ struct myList {
 
     void headDel(){
         Node* tmp = head;
-        if(isEmpty() == 1){
+        if(isEmpty() == 1) {
             cout << "List is Empty";
             return;
         }
-        cout << tmp -> data;
+        head = head -> next;
         delete(tmp);
 
     }
@@ -71,7 +71,8 @@ struct myList {
             cout << "List is Empty";
             return;
         }
-        cout << tmp -> data;
+
+        tail = tail -> prev;
         delete(tmp);
     }
 
@@ -82,7 +83,6 @@ struct myList {
 
 int main() {
     myList test;
-    
     return 0;
 }
 
