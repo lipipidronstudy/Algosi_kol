@@ -60,7 +60,6 @@ struct myList {
             cout << "List is Empty";
             return;
         }
-        cout << tmp -> data;
         delete(tmp);
 
     }
@@ -71,7 +70,6 @@ struct myList {
             cout << "List is Empty";
             return;
         }
-        cout << tmp -> data;
         delete(tmp);
     }
 
