@@ -23,6 +23,7 @@ struct myList {
         }
         return 0;
     }
+
     void addToHead(int x) {
         Node* tmp = new Node;
         tmp -> data = x;
@@ -57,12 +58,10 @@ struct myList {
     void headDel(){
         Node* tmp = head;
         if(isEmpty() == 1) {
-            cout << "List is Empty";
+            cout << "List is Empty" << '\n';
             return;
         }
-
         head = head -> next;
-
         delete(tmp);
 
     }
@@ -74,10 +73,22 @@ struct myList {
             return;
         }
 
-
         tail = tail -> prev;
-
         delete(tmp);
+    }
+    int peekTail() {
+        if (isEmpty() != 1) {
+            return tail->data;
+        }
+        cout << "List is Empty" << '\n';
+        return -1;
+    }
+    int peekHead() {
+        if (isEmpty() != 1) {
+            return head->data;
+        }
+        cout << "List is Empty" <<'\n';
+        return -1;
     }
 
 };
@@ -86,7 +97,11 @@ struct myList {
 
 
 int main() {
+    cin.tie(0);
+    cout.tie(0);
+    ios::sync_with_stdio(0);
     myList test;
+
     return 0;
 }
 
