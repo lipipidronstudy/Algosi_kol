@@ -17,6 +17,7 @@ struct myList {
         head = tail = nullptr;
     }
 
+
     void addToHead(int x) {
         Node* tmp = new Node;
         tmp -> data = x;
@@ -38,7 +39,40 @@ struct myList {
     }
 };
 
+
+    int isEmpty(){
+        if (head == nullptr && tail == nullptr){
+            return 1;
+        }
+        return 0;
+    }
+
+    void headDel(){
+     Node* tmp = head;
+     if(isEmpty() == 1){
+         cout << "List is Empty";
+         return;
+     }
+     delete(tmp);
+
+    }
+
+    void tailDel(){
+        Node* tmp = tail;
+        if(isEmpty() == 1){
+            cout << "List is Empty";
+            return;
+        }
+        delete(tmp);
+    }
+
+};
+
+
+
+
 int main() {
 
     return 0;
 }
+
