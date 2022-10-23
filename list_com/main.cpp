@@ -37,7 +37,6 @@ struct myList {
         tail -> next = tmp;
         tail = tmp;
     }
-};
 
 
     int isEmpty(){
