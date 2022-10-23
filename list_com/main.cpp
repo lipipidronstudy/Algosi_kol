@@ -17,42 +17,51 @@ struct myList {
         head = tail = nullptr;
     }
 
-
-    void addToHead(int x) {
-        Node* tmp = new Node;
-        tmp -> data = x;
-
-        tmp -> next = head;
-        tmp -> prev = nullptr;
-        head -> prev = tmp;
-        head = tmp;
-    }
-
-    void addToTail(int x) {
-        Node* tmp = new Node;
-        tmp -> data = x;
-
-        tmp -> prev = tail;
-        tmp -> next = nullptr;
-        tail -> next = tmp;
-        tail = tmp;
-    }
-
-
     int isEmpty(){
         if (head == nullptr && tail == nullptr){
             return 1;
         }
         return 0;
     }
+    void addToHead(int x) {
+        Node* tmp = new Node;
+        tmp -> data = x;
+
+        tmp -> next = head;
+        tmp -> prev = nullptr;
+        if (isEmpty() != 1) {
+            head->prev = tmp;
+        } else {
+            tail = tmp;
+        }
+        head = tmp;
+    }
+
+    void addToTail(int x) {
+        Node* tmp = new Node;
+        tmp -> data = x;
+        tmp -> prev = tail;
+        tmp -> next = nullptr;
+
+        if (isEmpty() != 0){
+            head = tmp;
+        } else {
+            tail -> next = tmp;
+        }
+        tail = tmp;
+    }
+
+
+
 
     void headDel(){
-     Node* tmp = head;
-     if(isEmpty() == 1){
-         cout << "List is Empty";
-         return;
-     }
-     delete(tmp);
+        Node* tmp = head;
+        if(isEmpty() == 1){
+            cout << "List is Empty";
+            return;
+        }
+        cout << tmp -> data;
+        delete(tmp);
 
     }
 
@@ -62,6 +71,7 @@ struct myList {
             cout << "List is Empty";
             return;
         }
+        cout << tmp -> data;
         delete(tmp);
     }
 
@@ -71,7 +81,9 @@ struct myList {
 
 
 int main() {
-
+    myList test;
+    
     return 0;
 }
+
 
